@@ -1,18 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
- function generatePassword(){
+function generatePassword() {
+  var length = 8;
+  var  setCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var retVal = "";
+  for (var i = 0, n = setCharacters.length; i < length; ++i) {
+      retVal += setCharacters.charAt(Math.floor(Math.random() * n));
+  }
+  return retVal;
+}
 
-    var finalArray = ["G",4,"%"];
-    varfinalPassword = "";
-
-    for(var i=0; i<passwordlength; i++){
-      var randomnumber = Math.floor(Math.random()*finalArray);
-      finalArray =+ finalArray[randomnumber]
-    }
-
-    return
- }
+ 
 
 // Write password to the #password input
 function writePassword() {
