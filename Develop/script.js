@@ -1,70 +1,32 @@
 // // Assignment Code
 // var generateBtn = document.querySelector("#generate");
 
-var length = Number(prompt("How many characters would you like your password to be?"));
-while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be 8-128 characters. How many characters would you like your password to be?"));
-
-var uppers = confirm("Would you like to use uppercase letters?");
-var lowers = confirm("Would you like to use lowercase letters?");
-var numbers = confirm("Would you like to use numbers?");
-var symbols = confirm("Would you like to use special characters?");
-
-while (!uppers && !lowers && !numbers && !symbols) {
-  alert("You must select at least one character type!");
-  uppers = confirm("Would you like to use uppercase letters?");
-  lowers = confirm("Would you like to use lowercase letters?");
-  numbers = confirm("Would you like to use numbers?");
-  symbols = confirm("Would you like to use special characters?");
-}
-
-window.addEventListener('load', function() {
-  generateNewPassword();
-});
-
-function generateNewPassword() {
-  var password = "";
-
-  var allowed = {};
-  if (uppers) password += rando(allowed.uppers = "QWERTYUIOPASDFGHJKLZXCVBNM");
-  if (lowers) password += rando(allowed.lowers = "qwertyuiopasdfghjklzxcvbnm");
-  if (numbers) password += rando(allowed.numbers = "1234567890");
-  if (symbols) password += rando(allowed.symbols = "!@#$%^&*(){}[]=<>/,.");
-
-  for (var i = password.length; i < length; i++) password += rando(rando(allowed).value);
-
-  document.getElementById("password").value = randoSequence(password).join("");
-}
-
-
-
-
-
-
-// Code will generate password by only clicking the 'Generate Password' button
-// function generatePassword() {
-//   var length = 8;
-//   var setCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-//   var password = "";
-//   for (i = 0, n = setCharacters.length; i < length; i++) {
-//       password += setCharacters.charAt(Math.floor(Math.random() * n));
-
-    
-//   }
-//   return password;
-// }
-
-//  generatePassword();
-
+// Adding symbols for function  
+const symbolsSet = "!@#$%^&*(){}[]=<>/,."
 
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Adding prompts 
+  function generatePassword () {
+    var passwordLength = prompt ('How many characters would you like your password to be? Password must be a minimum of 8 and maximum of 128.');
+    var numbers = confirm ('Would you like numbers in your password?');
+    var lowerCases = confirm ('Would you like lowercases in your password?');
+    var upperCases = confirm ('Would you like uppercases in your password?');
+    var symbols = (asdfasdf)
+
+  }
+
+
+
+
