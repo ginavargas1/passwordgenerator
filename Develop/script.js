@@ -3,15 +3,15 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var length = 8;
-  var  setCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var setCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var retVal = "";
-  for (var i = 0, n = setCharacters.length; i < length; ++i) {
+  for (var i = 0, n = setCharacters.length; i < length; i++) {
       retVal += setCharacters.charAt(Math.floor(Math.random() * n));
   }
   return retVal;
 }
 
- 
+ generatePassword();
 
 // Write password to the #password input
 function writePassword() {
