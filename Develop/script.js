@@ -1,8 +1,10 @@
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
 // Adding symbols for function  
-const symbolsSet = "!@#$%^&*(){}[]=<>/,."
+const symbolsSet = "!@#$%^&*(){}[]=<>/,.";
+const generateButton = document.getElementById('generateBtn')
+generateButton.addEventListener('click', writePassword)
 
 
 // Write password to the #password input
@@ -13,9 +15,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 // Adding prompts 
   function generatePassword () {
@@ -31,7 +30,7 @@ generateBtn.addEventListener("click", writePassword);
     var minimumNumbers = "";
     var minimumLowerCases = "";
     var minimumUpperCases = "";
-    var minimumSymbolSet ="";
+    var minimumSymbolsSet ="";
 
     // adding functions
     var functionArray = [
@@ -53,15 +52,46 @@ generateBtn.addEventListener("click", writePassword);
     ];
 
     if (numbers === true) {
-      minimumNumbers = functionArray[0];
+      minimumNumbers = functionArray.getNumbers ();
       minimumCount ++;
     }
 
-    if 
+    if (lowerCases === true) {
+      minimumLowerCases = functionArray.getLowerCases ();
+      minimumCount ++;
+    }
 
+    if (upperCases === true) {
+      minimumUpperCases = functionArray.getUpperCases();
+      minimumCount++;
+  
+    }
+  
+    if (special === true) {
+      minimumSymbolsSet = functionArray.getSymbolsSet();
+      minimumCount++;
+  
+    }
+
+    var randomPasswordGenerated = "";
+
+    // for loop
+    for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
+      var randomNumberPicked = Math.floor(Math.random() * 4);
+  
+      randomPasswordGenerated += randomNumberPicked;
+  
+    }
+  
+    randomPasswordGenerated += minimumNumbers;
+    randomPasswordGenerated += minimumLowerCases;
+    randomPasswordGenerated += minimumUpperCases;
+    randomPasswordGenerated += minimumSymbolsSet;
+  
+  
+    return randomPasswordGenerated;
 
   }
-
 
 
 
