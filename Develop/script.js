@@ -23,7 +23,17 @@ generateBtn.addEventListener("click", writePassword);
     var numbers = confirm ('Would you like numbers in your password?');
     var lowerCases = confirm ('Would you like lowercases in your password?');
     var upperCases = confirm ('Would you like uppercases in your password?');
-    var symbols = (asdfasdf)
+    var symbols = confirm ('Would you like to add special symbols?')
+
+    // adding a minimum amount of numbers, lowerCases, upperCases & symbols
+    var minimumCount = 0;
+
+    var minimumNumbers = "";
+    var minimumLowerCases = "";
+    var minimumUpperCases = "";
+    var minimumSymbolSet ="";
+
+
 
   }
 
