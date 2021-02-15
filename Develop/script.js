@@ -32,6 +32,10 @@ function writePassword() {
     var minimumUpperCases = "";
     var minimumSymbolsSet ="";
 
+    window.addEventListener('load', function() {
+      generateNewPassword();
+    });
+
     // adding functions
     var functionArray = [
       function getNumbers () {
