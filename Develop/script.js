@@ -33,6 +33,31 @@ generateBtn.addEventListener("click", writePassword);
     var minimumUpperCases = "";
     var minimumSymbolSet ="";
 
+    // adding functions
+    var functionArray = [
+      function getNumbers () {
+        return String.fromCharCode(Math.floor(Math.random()*10+48));
+      },
+
+      function getLowerCases () {
+        return String.fromCharCode(Math.floor(Math.random()* 26 + 97));
+      },
+
+      function getUpperCases () {
+        return String.fromCharCode(Math.floor(Math.random()* 26 + 65));
+      },
+
+      function getSymbolsSet (){
+          return symbolsSet(Math.floor(Math.random()* symbolsSet.length));
+      }
+    ];
+
+    if (numbers === true) {
+      minimumNumbers = functionArray[0];
+      minimumCount ++;
+    }
+
+    if 
 
 
   }
